@@ -13,6 +13,16 @@ public class Category {
 	private int totalRows;
 
 	private int noOfSeatsInFirstRow;
+	
+	public Category() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Category(int categoryId, String name) {
+		super();
+		this.categoryId = categoryId;
+		this.name = name;
+	}
 
 	public int getCategoryId() {
 		return categoryId;

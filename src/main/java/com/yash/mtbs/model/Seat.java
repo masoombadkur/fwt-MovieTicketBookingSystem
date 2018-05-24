@@ -9,6 +9,18 @@ public class Seat {
 	private int rowNo;
 
 	private int columnNo;
+	
+	public Seat() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Seat(int seatId, boolean isAvailable, int rowNo, int columnNo) {
+		super();
+		this.seatId = seatId;
+		this.isAvailable = isAvailable;
+		this.rowNo = rowNo;
+		this.columnNo = columnNo;
+	}
 
 	public int getSeatId() {
 		return seatId;

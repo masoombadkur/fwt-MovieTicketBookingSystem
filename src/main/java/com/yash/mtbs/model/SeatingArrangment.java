@@ -5,7 +5,17 @@ import java.util.List;
 public class SeatingArrangment {
 	private int seatingArrangmentId;
 
-	private List<Category> categiories;
+	private List<Category> categories;
+
+	public SeatingArrangment() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public SeatingArrangment(int seatingArrangmentId, List<Category> categiories) {
+		super();
+		this.seatingArrangmentId = seatingArrangmentId;
+		this.categories = categiories;
+	}
 
 	public int getSeatingArrangmentId() {
 		return seatingArrangmentId;
@@ -15,12 +25,12 @@ public class SeatingArrangment {
 		this.seatingArrangmentId = seatingArrangmentId;
 	}
 
-	public List<Category> getCategiories() {
-		return categiories;
+	public List<Category> getCategories() {
+		return categories;
 	}
 
-	public void setCategiories(List<Category> categiories) {
-		this.categiories = categiories;
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
 }
