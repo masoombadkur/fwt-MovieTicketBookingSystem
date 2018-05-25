@@ -18,8 +18,8 @@ public interface MTBSConstants {
 	int ADD_SCREEN = 1;
 
 	// Category constants
-	String GOLD = "GOLD";
-	String SILVER = "SILVER";
-	String PREMIER = "PREMIER";
+	String GOLD = "G";
+	String SILVER = "S";
+	String PREMIER = "P";
 
 }

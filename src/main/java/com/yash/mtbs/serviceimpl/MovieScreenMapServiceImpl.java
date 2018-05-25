@@ -6,15 +6,12 @@ import com.yash.mtbs.exceptions.EmptyException;
 import com.yash.mtbs.model.Movie;
 import com.yash.mtbs.model.MovieScreenMap;
 import com.yash.mtbs.dao.MovieScreenMapDao;
-import com.yash.mtbs.dao.ScreenDao;
 import com.yash.mtbs.service.MovieScreenMapService;
 
 public class MovieScreenMapServiceImpl implements MovieScreenMapService {
 
 	private MovieScreenMapDao movieScreenMapDao;
 	
-	private ScreenDao screenDao;
-
 	public MovieScreenMapServiceImpl(MovieScreenMapDao movieScreenMapDao) {
 		this.movieScreenMapDao = movieScreenMapDao;
 	}

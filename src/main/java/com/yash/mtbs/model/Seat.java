@@ -8,18 +8,19 @@ public class Seat {
 
 	private int rowNo;
 
-	private int columnNo;
+	private int seatNo;
 	
 	public Seat() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Seat(int seatId, boolean isAvailable, int rowNo, int columnNo) {
+	public Seat(int seatId, boolean isAvailable, int rowNo, int seatNo) {
 		super();
 		this.seatId = seatId;
 		this.isAvailable = isAvailable;
 		this.rowNo = rowNo;
-		this.columnNo = columnNo;
+		this.seatNo = seatNo;
+		
 	}
 
 	public int getSeatId() {
@@ -46,12 +47,11 @@ public class Seat {
 		this.rowNo = rowNo;
 	}
 
-	public int getColumnNo() {
-		return columnNo;
+	public int getSeatNo() {
+		return seatNo;
 	}
 
-	public void setColumnNo(int columnNo) {
-		this.columnNo = columnNo;
+	public void setSeatNo(int seatNo) {
+		this.seatNo = seatNo;
 	}
-
 }

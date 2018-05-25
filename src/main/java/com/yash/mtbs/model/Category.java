@@ -17,11 +17,20 @@ public class Category {
 	public Category() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	public Category(int categoryId, String name) {
 		super();
 		this.categoryId = categoryId;
 		this.name = name;
+	}
+
+	public Category(int categoryId, String name, List<Seat> seats, int totalRows, int noOfSeatsInFirstRow) {
+		super();
+		this.categoryId = categoryId;
+		this.name = name;
+		this.seats = seats;
+		this.totalRows = totalRows;
+		this.noOfSeatsInFirstRow = noOfSeatsInFirstRow;
 	}
 
 	public int getCategoryId() {
