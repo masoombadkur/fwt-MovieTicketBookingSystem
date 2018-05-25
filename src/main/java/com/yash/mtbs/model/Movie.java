@@ -1,5 +1,6 @@
 package com.yash.mtbs.model;
 
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -13,7 +14,11 @@ public class Movie {
 	
 	private String production;
 	
-	private Timestamp duration;
+	private Time duration;
+	
+	public Movie() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Movie(int movieId, String name) {
 		super();
@@ -53,11 +58,11 @@ public class Movie {
 		this.production = production;
 	}
 
-	public Timestamp getDuration() {
+	public Time getDuration() {
 		return duration;
 	}
 
-	public void setDuration(Timestamp duration) {
+	public void setDuration(Time duration) {
 		this.duration = duration;
 	}
 

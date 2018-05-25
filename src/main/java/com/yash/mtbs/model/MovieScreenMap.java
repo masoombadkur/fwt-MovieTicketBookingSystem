@@ -16,10 +16,11 @@ public class MovieScreenMap {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public MovieScreenMap(int movieScreenMapId, Movie movie) {
+	public MovieScreenMap(int movieScreenMapId, Movie movie, Screen screen) {
 		super();
 		this.movieScreenMapId = movieScreenMapId;
 		this.movie = movie;
+		this.screen = screen;
 	}
 
 	public int getMovieScreenMapId() {

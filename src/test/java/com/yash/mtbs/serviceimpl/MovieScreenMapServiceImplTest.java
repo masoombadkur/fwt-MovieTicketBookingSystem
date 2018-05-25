@@ -15,6 +15,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import com.yash.mtbs.exceptions.EmptyException;
 import com.yash.mtbs.model.Movie;
 import com.yash.mtbs.model.MovieScreenMap;
+import com.yash.mtbs.model.Screen;
+import com.yash.mtbs.model.SeatingArrangment;
 import com.yash.mtbs.dao.MovieScreenMapDao;
 import com.yash.mtbs.service.MovieScreenMapService;
 
@@ -56,7 +58,7 @@ public class MovieScreenMapServiceImplTest {
 	@Test
 	public void getAllMovieScreenMappings_shouldReturnListOfMovieScreenMaps() {
 		List<MovieScreenMap> movieScreenMaps = new ArrayList<MovieScreenMap>();
-		movieScreenMaps.add(new MovieScreenMap(100, new Movie(100, "Razzi")));
+		movieScreenMaps.add(new MovieScreenMap(100, new Movie(100, "Razzi"), new Screen()));
 		when(movieScreenMapDao.getMovieScreenMaps()).thenReturn(movieScreenMaps);
 		assertEquals(1, movieScreenMapService.getAllMovieScreenMappings().size());
 	}
@@ -76,8 +78,8 @@ public class MovieScreenMapServiceImplTest {
 	}
 	
 	@Test
-	public void addMovieScreenMap_ShouldReturnOne_WhenMovieScreenMapObjectIsGiven(){
-		MovieScreenMap movieScreenMap = new MovieScreenMap(100, new Movie(100, "Razzi"));
+	public void addMovieScreenMap_ShouldReturnOne_WhenMovieScreenMapObjectIsGivenAndSeatingArrangmentInScreenObjectIsNull(){
+		MovieScreenMap movieScreenMap = new MovieScreenMap(100, new Movie(100, "Razzi"), new Screen(1, "s1", null));
 		when(movieScreenMapDao.insertMovieScreenMap(movieScreenMap)).thenReturn(1);
 		assertEquals(1, movieScreenMapService.addMovieScreenMap(movieScreenMap));
 	}
@@ -92,6 +94,24 @@ public class MovieScreenMapServiceImplTest {
 	public void addMovieScreenMap_ShouldThrowEmptyException_WhenMovieScreenMapObjectIsEmpty(){
 		MovieScreenMap movieScreenMap = new MovieScreenMap();
 		movieScreenMapService.addMovieScreenMap(movieScreenMap);
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void addMovieScreenMap_ShouldThrowNullException_WhenMovieObjectMappedToScreenIsNull(){
+		MovieScreenMap movieScreenMap = new MovieScreenMap(100, null, new Screen());
+		movieScreenMapService.addMovieScreenMap(movieScreenMap);
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void addMovieScreenMap_ShouldThrowNullException_WhenScreenObjectMappedToMovieIsNull(){
+		MovieScreenMap movieScreenMap = new MovieScreenMap(100, new Movie(100, "m1"), null);
+		movieScreenMapService.addMovieScreenMap(movieScreenMap);
+	}
+	
+	@Test
+	public void addMovieScreenMap_ShouldReturnZero_WhenMovieScreenMapObjectIsGivenAndSeatingArrangmentInScreenObjectIsNotNull(){
+		MovieScreenMap movieScreenMap = new MovieScreenMap(100, new Movie(100, "Razzi"), new Screen(100, "audi-1", new SeatingArrangment()));
+		assertEquals(0, movieScreenMapService.addMovieScreenMap(movieScreenMap));
 	}
 
 }
