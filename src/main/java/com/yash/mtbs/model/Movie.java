@@ -5,19 +5,27 @@ import java.sql.Timestamp;
 import java.util.List;
 
 public class Movie {
-	
+
 	private int movieId;
-	
+
 	private String name;
-	
+
 	private List<String> actors;
-	
+
 	private String production;
-	
-	private Time duration;
-	
+
+	private String duration;
+
 	public Movie() {
-		// TODO Auto-generated constructor stub
+	}
+
+	public Movie(int movieId, String name, List<String> actors, String production, String duration) {
+		super();
+		this.movieId = movieId;
+		this.name = name;
+		this.actors = actors;
+		this.production = production;
+		this.duration = duration;
 	}
 
 	public Movie(int movieId, String name) {
@@ -26,6 +34,13 @@ public class Movie {
 		this.name = name;
 	}
 
+	public Movie(int movieId, String name, String duration) {
+		super();
+		this.movieId = movieId;
+		this.name = name;
+		this.duration = duration;
+	}
+	
 	public int getMovieId() {
 		return movieId;
 	}
@@ -58,11 +73,11 @@ public class Movie {
 		this.production = production;
 	}
 
-	public Time getDuration() {
+	public String getDuration() {
 		return duration;
 	}
 
-	public void setDuration(Time duration) {
+	public void setDuration(String duration) {
 		this.duration = duration;
 	}
 

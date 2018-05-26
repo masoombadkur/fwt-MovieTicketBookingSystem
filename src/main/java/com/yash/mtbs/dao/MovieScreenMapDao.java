@@ -13,4 +13,8 @@ public interface MovieScreenMapDao {
 
 	int insertMovieScreenMap(MovieScreenMap movieScreenMap);
 
+	int insertMovie(Movie movie);
+
+	Movie getMovie(String movieName);
+
 }

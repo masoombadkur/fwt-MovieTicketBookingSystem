@@ -12,4 +12,6 @@ public interface ScreenDao {
 
 	Screen getScreen(String screenName);
 
+	int updateScreen(Screen existingScreen);
+
 }

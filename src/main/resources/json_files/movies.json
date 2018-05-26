@@ -1,0 +1,42 @@
+[
+  {
+    "movieId": 101,
+    "name": "Veere Di wedding",
+    "actors": [
+      "Kareena kapoor",
+      "Sonam kapoor"
+    ],
+    "production": "Dharma production",
+    "duration": "02:30:10 AM"
+  },
+  {
+    "movieId": 101,
+    "name": "Veere Di wedding",
+    "actors": [
+      "Kareena kapoor",
+      "Sonam kapoor"
+    ],
+    "production": "Dharma production",
+    "duration": "02:30:10 AM"
+  },
+  {
+    "movieId": 101,
+    "name": "Veere Di wedding",
+    "actors": [
+      "Kareena kapoor",
+      "Sonam kapoor"
+    ],
+    "production": "Dharma production",
+    "duration": "02:30:40 AM"
+  },
+  {
+    "movieId": 101,
+    "name": "Veere Di wedding",
+    "actors": [
+      "Kareena kapoor",
+      "Sonam kapoor"
+    ],
+    "production": "Dharma production",
+    "duration": "02:30:10"
+  }
+]

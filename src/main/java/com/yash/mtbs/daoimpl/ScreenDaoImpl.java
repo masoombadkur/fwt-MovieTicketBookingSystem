@@ -46,5 +46,20 @@ public class ScreenDaoImpl implements ScreenDao {
 		}
 		return existingScreen;
 	}
+	
+	@Override
+	public int updateScreen(Screen existingScreen) {
+		if(getScreen(existingScreen.getName()) == null){
+			throw new NullPointerException("Screen doesn't exist");
+		}
+		List<Screen> screens = getScreens();
+		for (Screen screen : screens) {
+			if(screen.getName().equalsIgnoreCase(existingScreen.getName())){
+				screen.setSeatingArrangment(existingScreen.getSeatingArrangment());
+			}
+		}
+		JSONUtil.writeJSONToFile(screens, MTBSConstants.JSON_FILE_PATH, MTBSConstants.SCREEN_JSON_FILE_NAME);
+		return 1;
+	}
 
 }
