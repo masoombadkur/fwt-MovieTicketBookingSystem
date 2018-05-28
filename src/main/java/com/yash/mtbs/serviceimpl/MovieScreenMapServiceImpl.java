@@ -32,7 +32,7 @@ public class MovieScreenMapServiceImpl implements MovieScreenMapService {
 		if (movieScreenMaps == null) {
 			throw new NullPointerException("Movie Screen map list is null");
 		}
-		if (movieScreenMaps.isEmpty()) {
+		if (movieScreenMaps.isEmpty())  {
 			throw new EmptyException("Movie Screen map list is empty");
 		}
 		return movieScreenMaps;

@@ -13,22 +13,25 @@ public class ScreenDaoImpl implements ScreenDao {
 
 	@Override
 	public int addScreen(Screen screen) {
-		if(getScreen(screen.getName()) != null){
+		int rowsAffected = 0;
+		if (getScreen(screen.getName()) != null) {
 			throw new AlreadyExistException("Screen already exist");
 		}
 		List<Screen> screens = getScreens();
 		screens.add(screen);
 		JSONUtil.writeJSONToFile(screens, MTBSConstants.JSON_FILE_PATH, MTBSConstants.SCREEN_JSON_FILE_NAME);
-		return 1;
+		rowsAffected = 1;
+		return rowsAffected;
 	}
 
 	@Override
 	public List<Screen> getScreens() {
 		List<Screen> screens = new ArrayList<>();
-		List screenList = JSONUtil.readJSONFromFile(MTBSConstants.JSON_FILE_PATH, MTBSConstants.SCREEN_JSON_FILE_NAME);
-			for (Object screen : screenList) {
-				screens.add(JSONUtil.mapObjectToSpecificModelObject(Screen.class, screen));
-			}
+		List<?> screenList = JSONUtil.readJSONFromFile(MTBSConstants.JSON_FILE_PATH,
+				MTBSConstants.SCREEN_JSON_FILE_NAME);
+		for (Object screen : screenList) {
+			screens.add(JSONUtil.mapObjectToSpecificModelObject(Screen.class, screen));
+		}
 		return screens;
 	}
 
@@ -36,7 +39,7 @@ public class ScreenDaoImpl implements ScreenDao {
 	public Screen getScreen(String screenName) {
 		Screen existingScreen = null;
 		List<Screen> screens = getScreens();
-		if(screens != null || screens.size() > 0){
+		if (screens != null || screens.size() > 0) {
 			for (Screen screen : screens) {
 				if (screen.getName().equalsIgnoreCase(screenName)) {
 					existingScreen = screen;
@@ -46,20 +49,22 @@ public class ScreenDaoImpl implements ScreenDao {
 		}
 		return existingScreen;
 	}
-	
+
 	@Override
 	public int updateScreen(Screen existingScreen) {
-		if(getScreen(existingScreen.getName()) == null){
+		int rowsAffected = 0;
+		if (getScreen(existingScreen.getName()) == null) {
 			throw new NullPointerException("Screen doesn't exist");
 		}
 		List<Screen> screens = getScreens();
 		for (Screen screen : screens) {
-			if(screen.getName().equalsIgnoreCase(existingScreen.getName())){
+			if (screen.getName().equalsIgnoreCase(existingScreen.getName())) {
 				screen.setSeatingArrangment(existingScreen.getSeatingArrangment());
 			}
 		}
 		JSONUtil.writeJSONToFile(screens, MTBSConstants.JSON_FILE_PATH, MTBSConstants.SCREEN_JSON_FILE_NAME);
-		return 1;
+		rowsAffected = 1;
+		return rowsAffected;
 	}
 
 }

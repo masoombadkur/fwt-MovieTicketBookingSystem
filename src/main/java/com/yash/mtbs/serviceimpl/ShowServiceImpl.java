@@ -42,24 +42,24 @@ public class ShowServiceImpl implements ShowService {
 		String durationInStringFormat = movie.getDuration();
 		int hrs = Integer.parseInt(durationInStringFormat.substring(0, durationInStringFormat.indexOf(":")));
 		int mins = Integer.parseInt(durationInStringFormat.substring(durationInStringFormat.indexOf(":") + 1));
-
 		int durationInMins = (hrs * 60) + mins;
 		int noOfShows = (MTBSConstants.TOTAL_HRS_IN_DAY_TO_BE_ALLOTED * 60)
 				/ (durationInMins + MTBSConstants.TIME_INTERVAL_BTW_SHOWS);
-		List<Show> shows = getShows(movieScreenMap, durationInMins, noOfShows);
+		List<Show> shows = createShowsBasedOnTimeDuration(movieScreenMap, durationInMins, noOfShows);
 
 		return shows;
 	}
 
-	private List<Show> getShows(MovieScreenMap movieScreenMap, int durationInMins, int noOfShows) {
+	private List<Show> createShowsBasedOnTimeDuration(MovieScreenMap movieScreenMap, int durationInMins, int noOfShows) {
 		List<Show> shows = new ArrayList<>();
-		String startTime = "10:00";
+		String startTime = MTBSConstants.START_TIME;
 		String endTime = null;
 		Show show = null;
 		while (noOfShows > 0) {
 			show = new Show();
 			show.setShowId(100);
 			show.setMovieScreenMap(movieScreenMap);
+			show.setCategories(movieScreenMap.getScreen().getSeatingArrangment().getCategories());
 			show.setDate(TimeUtil.getTodaysDate());
 			show.setStartTime(startTime);
 			// calculate end time of current show

@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.yash.mtbs.dao.ScreenDao;
 import com.yash.mtbs.exceptions.EmptyException;
-import com.yash.mtbs.literals.MTBSConstants;
 import com.yash.mtbs.model.Category;
 import com.yash.mtbs.model.Screen;
 import com.yash.mtbs.model.Seat;

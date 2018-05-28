@@ -14,6 +14,8 @@ public class Category {
 
 	private int noOfSeatsInFirstRow;
 	
+	private double price;
+	
 	public Category() {
 		// TODO Auto-generated constructor stub
 	}
@@ -71,6 +73,14 @@ public class Category {
 
 	public void setNoOfSeatsInFirstRow(int noOfSeatsInFirstRow) {
 		this.noOfSeatsInFirstRow = noOfSeatsInFirstRow;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 }

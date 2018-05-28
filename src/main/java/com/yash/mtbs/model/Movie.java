@@ -1,7 +1,5 @@
 package com.yash.mtbs.model;
 
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.util.List;
 
 public class Movie {

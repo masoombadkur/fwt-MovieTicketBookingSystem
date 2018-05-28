@@ -1,18 +1,15 @@
 package com.yash.mtbs.daoimpl;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import com.yash.mtbs.dao.ScreenDao;
 import com.yash.mtbs.exceptions.AlreadyExistException;
 import com.yash.mtbs.model.Screen;
-import com.yash.mtbs.util.JSONUtil;
+import com.yash.mtbs.model.SeatingArrangment;
 
 public class ScreenDaoImplTest {
 
@@ -49,9 +46,21 @@ public class ScreenDaoImplTest {
 	}
 
 	@Test
-	public void addScreen_shouldAddNewScreenToList_WhenScreenObjectIsGiven() {
+	public void addScreen_shouldAddNewScreenToListAndReturnOne_WhenScreenObjectIsGiven() {
 		screen = new Screen(100, "AUDI-3", null);
 		assertEquals(1, screenDao.addScreen(screen));
+	}
+	
+	@Test
+	public void updateScreen_shouldUpdateExistingScreenInListAndReturnOne_WhenScreenObjectIsGiven() {
+		screen = new Screen(102, "AUDI-3", null);
+		assertEquals(1, screenDao.updateScreen(screen));
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void updateScreen_shouldThrowNullException_WhenScreenObjectGivenDoesntExist() {
+		screen = new Screen(102, "A", null);
+		screenDao.updateScreen(screen);
 	}
 
 }

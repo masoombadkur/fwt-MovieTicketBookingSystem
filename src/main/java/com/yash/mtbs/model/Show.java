@@ -1,6 +1,6 @@
 package com.yash.mtbs.model;
 
-import java.util.Date;
+import java.util.List;
 
 public class Show {
 
@@ -13,6 +13,8 @@ public class Show {
 	private String endTime;
 
 	private String date;
+	
+	private List<Category> categories;
 
 	public Show() {
 		// TODO Auto-generated constructor stub
@@ -64,6 +66,14 @@ public class Show {
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
 }

@@ -3,3 +3,7 @@
 =======================
 1. Add Screen
 2. Add Movie to Screen
+3. Design seating arrangement for screen
+4. Adding shows for movie
+5. Book ticket
+6. Cancel booking

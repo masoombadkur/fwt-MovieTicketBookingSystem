@@ -20,9 +20,8 @@ public class Seat {
 		this.isAvailable = isAvailable;
 		this.rowNo = rowNo;
 		this.seatNo = seatNo;
-		
 	}
-
+	
 	public int getSeatId() {
 		return seatId;
 	}

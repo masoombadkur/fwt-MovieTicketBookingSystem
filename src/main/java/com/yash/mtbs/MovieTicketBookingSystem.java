@@ -12,9 +12,16 @@ import com.yash.mtbs.util.FileUtil;
 public class MovieTicketBookingSystem {
 
 	Scanner scanner = new Scanner(System.in);
+	
+	private static MovieTicketBookingSystem movieTicketBookingSystem;
 
-	public MovieTicketBookingSystem() {
+	private MovieTicketBookingSystem() {
 
+	}
+	
+	public static MovieTicketBookingSystem getMovieTicketBookingSystem() {
+		movieTicketBookingSystem = new MovieTicketBookingSystem();
+		return movieTicketBookingSystem;
 	}
 
 	public void start() {
@@ -84,11 +91,59 @@ public class MovieTicketBookingSystem {
 	private void getOperationToBePerformedBasedOnMenu(int selectedMenuOption) {
 		switch (selectedMenuOption) {
 		case MTBSConstants.ADD_SCREEN:
+			addScreen();
+			break;
 
+		case MTBSConstants.ADD_MOVIE_TO_SCREEN:
+			addMovieToScreen();
+			break;
+
+		case MTBSConstants.DESIGN_SEATING_ARRANGEMENT_FOR_SCREEN:
+			designSeatingArragementForScreen();
+			break;
+
+		case MTBSConstants.ADD_SHOWS_FOR_MOVIE:
+			addShowsForMovie();
+			break;
+
+		case MTBSConstants.BOOK_TICKET:
+			bookTicket();
+			break;
+
+		case MTBSConstants.CANCEL_BOOKING:
+			cancelBooking();
+			break;
+
+		case MTBSConstants.EXIT:
+			System.exit(0);
 			break;
 
 		default:
 			break;
 		}
+	}
+
+	private void addScreen() {
+
+	}
+
+	private void addMovieToScreen() {
+
+	}
+
+	private void designSeatingArragementForScreen() {
+
+	}
+
+	private void addShowsForMovie() {
+
+	}
+
+	private void bookTicket() {
+
+	}
+
+	private void cancelBooking() {
+
 	}
 }

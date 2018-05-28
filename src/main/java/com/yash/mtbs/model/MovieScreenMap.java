@@ -8,14 +8,10 @@ public class MovieScreenMap {
 
 	private Screen screen;
 
-	private String category;
-
-	private double price;
-
 	public MovieScreenMap() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public MovieScreenMap(int movieScreenMapId, Movie movie, Screen screen) {
 		super();
 		this.movieScreenMapId = movieScreenMapId;
@@ -45,22 +41,6 @@ public class MovieScreenMap {
 
 	public void setScreen(Screen screen) {
 		this.screen = screen;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
 	}
 
 }

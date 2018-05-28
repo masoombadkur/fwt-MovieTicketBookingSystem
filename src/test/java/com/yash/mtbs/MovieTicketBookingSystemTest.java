@@ -15,7 +15,7 @@ public class MovieTicketBookingSystemTest {
 	
 	@Before
 	public void initMovieTicketBookingSystem() {
-		movieTicketBookingSystem = new MovieTicketBookingSystem();
+		movieTicketBookingSystem = MovieTicketBookingSystem.getMovieTicketBookingSystem();
 	}
 
 	@Test(expected = NullPointerException.class)

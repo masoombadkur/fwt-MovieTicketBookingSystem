@@ -57,10 +57,6 @@ public class ScreenServiceImpl implements ScreenService {
 			throw new EmptyException("Screen name is empty");
 		}
 		Screen screen = screenDao.getScreen(screenName);
-
-		if (screen == null) {
-			throw new NullPointerException("Screen is null");
-		}
 		return screen;
 	}
 
